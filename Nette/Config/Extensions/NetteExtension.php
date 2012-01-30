@@ -254,7 +254,7 @@ class NetteExtension extends Nette\Config\CompilerExtension
 				->setClass('Nette\Database\Connection', array($info['dsn'], $info['user'], $info['password'], $info['options']))
 				->setAutowired($info['autowired'])
 				->addSetup('setCacheStorage')
-				->addSetup('setDatabaseReflection', array(new Nette\DI\Statement('Nette\Database\Reflection\DiscoveredReflection')))
+				->addSetup('setDatabaseReflection')
 				->addSetup('Nette\Diagnostics\Debugger::$blueScreen->addPanel(?)', array(
 					'Nette\Database\Diagnostics\ConnectionPanel::renderException'
 				));
